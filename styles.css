@@ -1,0 +1,475 @@
+  /* Basic Reset and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1d;
+            color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #222;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e76f51;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e76f51;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('https://source.unsplash.com/1600x900/?atom,science') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px; /* Adjusted for fixed header */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero .hero-button {
+            padding: 15px 30px;
+            background: #e76f51;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .hero .hero-button:hover {
+            background: #f4a261;
+        }
+
+        /* Main Sections Styling */
+        .main-content {
+            padding: 50px;
+        }
+
+        .course {
+            margin-bottom: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            opacity: 0; /* Hidden by default for animation */
+            transform: translateY(50px); /* Initial position */
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .course.show {
+            opacity: 1; /* Fully visible when in view */
+            transform: translateY(0); /* Moves to original position */
+        }
+
+        /* Hover effect for courses */
+        .course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Textured Background for Basic Course */
+        .course.basic {
+            background: linear-gradient(135deg, #f4f4f4, #eaeaea);
+            color: #1a1a1d; /* Black text for contrast */
+        }
+
+        /* Golden Textured Background for Graduate Course */
+        .course.graduate {
+            background: linear-gradient(135deg, #ffd700, #f0c14b);
+            color: #4d3b01; /* Darker shade for readability */
+        }
+
+        .course h2 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course.basic h2 {
+            color: #e76f51;
+        }
+
+        .course.graduate h2 {
+            color: #4d2b01; /* Dark golden-brown for titles */
+        }
+
+        .course h3 {
+            margin-top: 20px;
+            color: #f4a261;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            color: #fff;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Titanium Badge */
+        .badge-titanium {
+            background: linear-gradient(135deg, #b0c4de, #708090);
+        }
+
+        /* Golden Badge */
+        .badge-gold {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+        }
+
+        /* Hover effect for badges */
+        .badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .course ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .course ul li {
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .course ul li:hover {
+            transform: translateX(10px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #e76f51;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f4a261;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer h4 {
+            margin-bottom: 10px;
+            color: #e76f51;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 5px;
+        }
+
+        footer ul li a {
+            color: #f4f4f4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #e76f51;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .cta-button, .hero .hero-button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+  /* Styling for the expandable details section */
+.details {
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden;
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 2px solid #e76f51; /* Adds a left border to visually separate */
+    transition: max-height 0.3s ease-out; /* Smooth expand/collapse animation */
+}
+
+
+/* Styling for About Us Sections */
+.about-us {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f4f9;
+    border-radius: 8px;
+}
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.about-img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-vision {
+    text-align: center;
+    padding: 20px;
+}
+
+.about-vision i {
+    font-size: 2em;
+    color: #e76f51;
+    margin-bottom: 10px;
+}
+
+.about-values {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-values h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.values-list i {
+    color: #e76f51;
+}
+
+/* Enhance readability by adjusting text color and shadows */
+.about-vision, .about-values, .about-text {
+    color: #333; /* Change text color to a darker shade */
+}
+
+/* Add text shadow for better visibility */
+h2, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow to make text pop */
+}
+
+/* Ensure background overlay is strong enough to separate text from background */
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Increase overlay opacity */
+}
+
+/* Increase font weight */
+h2 {
+    font-weight: 700; /* Make headings bolder */
+}
+
+p {
+    font-weight: 400; /* Increase paragraph font weight */
+}
+/* Styling for the contact form */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1f1f1f; /* Darker background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-form p {
+    color: #d3d3d3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(50% - 10px); /* Half-width with space between */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #fff;
+    transition: border-color 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #bbb;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff7043; /* Highlight color */
+}
+
+.contact-form input[type="text"] {
+    float: left; /* Align name input on the left */
+    margin-right: 10px; /* Space between name and email fields */
+}
+
+.contact-form input[type="email"] {
+    float: right; /* Align email input on the right */
+}
+
+.contact-form textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff7043;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #e56436;
+}
+
+/* Clearing floats */
+.contact-form::after {
+    content: "";
+    display: table;
+    clear: both;
+}
